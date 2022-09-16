@@ -1,0 +1,22 @@
+<%-include('partials/header')%>
+
+
+	<form class="postCreation" action="/post" method="post" onsubmit="return validate()">
+
+		<h4>Write a post</h4>
+
+		<label for="title">Title : </label>
+		<input type="text" placeholder="post title here" name="postTitle" id="title">
+		<span class="error" id="titleError"></span>
+
+		<label for="content">Content : </label>
+		<textarea id="content" name="postContent" placeholder="post description here"></textarea>
+		<span id="contentError" class="error"></span>
+
+		<button type="submit">Post</button>
+
+	</form>
+
+
+	<script src="/validate.js"></script>
+<%-include('partials/footer')%>

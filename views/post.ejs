@@ -1,0 +1,28 @@
+<%-include('partials/header')%>
+	<div class="about_section">
+		<div class="post-options">
+			<div class="line"></div>	
+				<div class="read">
+					<a href="#readpost">READ POSTS</a>
+				</div>	
+				<div class="compose">
+					<a href="/compose">CREATE POST</a>
+				</div>	
+		</div>	
+	</div>
+
+	<div class="posts" id="readpost">
+		<% for(let i=0;i<allposts.length;i++){ %>
+			<div class="post_" id="post<%=i%>">
+			<div class="post_data">
+			<h2 "><%=allposts[i].title%></h2>
+			<p><%=allposts[i].content.length>100?allposts[i].content.substr(0,100)+"...":allposts[i].content%><a href="/post/<%=allposts[i].title%>" class="read_post">Read</a></p>
+			</div>
+			<a class="delete_post" href="/post/del/<%=allposts[i].title%>">&#128465;</a>
+			</div>
+		<% } %>
+
+	</div>
+
+
+<%-include('partials/footer')%>

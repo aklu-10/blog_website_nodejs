@@ -1,0 +1,489 @@
+::-webkit-scrollbar
+{
+	width:10px;
+}
+::-webkit-scrollbar-track
+{
+	background-color: rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: rgba(0,0,0,0.8);
+}
+html
+{
+	scroll-behavior: smooth;	
+}
+@keyframes fadeIn
+{
+	from
+	{
+		opacity: 0;
+	}
+
+	to
+	{
+		opacity: 1;
+
+	}
+}
+
+@keyframes slideUp
+{
+	from
+	{
+		transform: translateY(40px);
+		opacity: 0;
+	}
+
+	to
+	{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+*
+{
+	margin:0;
+	padding:0;
+	box-sizing: border-box; 
+	font-family: sans-serif;
+}
+
+
+body
+{
+	min-height: 100vh;
+}
+
+header
+{
+	border-bottom:1px solid rgba(0,0,0,0.2);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 40px;
+	height: 10vh;
+	position: sticky;
+	top:0;
+	background-color: white;
+	z-index: 100;
+	
+}
+
+.brand
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 10%;
+}
+
+.brand img
+{
+	width: 60px;
+	position: relative;
+	top:2px;
+	left:12px;
+}
+
+
+.brand a
+{
+	font-size: 1.5rem;
+	text-decoration: none;
+	color:green;
+}
+
+
+nav
+{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 30%;
+}
+
+nav a
+{
+	text-decoration: none;
+	color:gray;
+}
+nav a.active
+{
+	color:black;
+	font-weight: bold;
+}
+
+
+
+.hero
+{
+	position: relative;
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-image: url('/Background2.png');
+	background-size:cover;
+	text-align: center;
+	z-index: -1;
+	transition: transform .1s ease;
+
+}
+
+.hero h2
+{
+	font-size: 2rem;
+	animation: fadeIn 2s linear 1;
+	background-color: rgba(255,255,255,0.6);
+	backdrop-filter:blur(20px);
+	padding: 20px;
+	background-color: black;
+	color:white;
+	border-radius: 3px;
+}
+
+
+.dropmenu
+{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 3%;
+	z-index: 20;
+}
+
+header label
+{
+	width:35px;
+	height:35px;
+	position: absolute;
+	flex-direction: column;
+	justify-content: space-around;
+	display: none;
+	z-index: 20;
+}
+
+.bar1,.bar2,.bar3
+{
+	width: 100%;
+	height: 2px;
+	background-color: black;
+	transition: transform .4s ease;
+}
+
+input#hammenu:checked ~ label>div.bar1 
+{
+	transform: rotate(45deg) translate(7px,7px);
+}
+
+input#hammenu:checked ~ label>div.bar2
+{
+	display: none;
+}
+
+input#hammenu:checked ~ label>div.bar3 
+{
+	transform: rotate(-45deg) translate(5px,-5px);
+}
+
+.menu-options
+{
+	background-color: white;
+	height: 90vh;
+	width: 0px;
+	position: fixed;
+	top:10vh;
+	right:0;
+	transform: translateX(100%);
+	text-align: center;
+	flex-direction: column;
+	z-index: 9;
+	transition: all .2s ease;
+	box-shadow: 0 0 2px black;
+}
+
+.menu-options a
+{
+	margin-top: 12vh;
+	color:black;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-right: 20px;
+	width: 100%;
+	visibility: hidden;
+}
+
+
+.about_section
+{
+	height: 90vh;
+	padding:4%; 
+}
+
+.about_section .post-options
+{
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	flex-wrap: wrap;
+	animation: slideUp 1s linear 1;
+
+}
+
+.about_section .post-options .line
+{
+	position: absolute;
+	background-color: rgba(0,0,0,0.2);
+	height: 25%;
+	width: 2px;
+}
+
+.about_section .post-options .read,.compose
+{
+	width: 50vh;
+	height: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.about_section .post-options a
+{
+	padding: 8% 12%;
+	font-size: 1.2rem;
+	border:1px solid gray;
+	background-color: white;
+	text-decoration: none;
+	color:rgba(0,0,0,0.8);
+}
+.about_section .post-options a:hover
+{
+	background-color: black;
+	border:1px solid white;
+	color:white;
+}
+.about_section .post-options .read::after,.about_section .post-options .compose::after
+{
+	position: absolute;
+	content:'';
+	display: inline-block;
+	width:30vh;
+	height: 20px;
+	border-radius: 50%;
+	bottom: 35%;
+	background-image: linear-gradient(90deg,rgba(0,0,0,0.1),rgba(0,0,0,0.2));
+}
+
+
+.testing
+{
+	height: 100vh;
+	z-index: 2;
+	position: relative;
+	background-color: black;
+	color:white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.2rem;
+	padding: 20px;
+	text-align: left;
+}
+
+.posts
+{
+	height: 100vh;
+	box-shadow: 0 0 1px gray;
+	padding: 12vh 8vh;
+}
+.posts p
+{
+	margin-top: 5px;
+	margin-bottom: 50px;
+	text-align: justify;
+	width: 100%;
+	word-wrap: break-word;
+
+}
+
+.postCreation
+{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	padding: 40px;
+	position: relative;
+}
+
+.postCreation h4
+{
+	font-size: 1.4rem;
+	margin-bottom: 30px;
+}
+.postCreation label
+{
+	font-size: 1.1rem;
+	margin-top: 30px;
+	color:rgba(0,0,0,0.8);
+}
+
+.postCreation input,.postCreation textarea
+{
+	border:1px solid rgba(0,0,0,.2);
+	height: 40px;
+	font-size: 1.4rem;
+	margin-bottom: 50px;
+	margin-top: 10px;
+	font-size: 1rem;
+	padding: 10px;
+}
+
+.postCreation textarea
+{
+	height: 200px;
+	resize: none;
+
+}
+
+
+.postCreation button
+{
+	width: max-content;
+	padding: 8px 30px;
+	background-color: black;
+	color:white;
+	cursor: pointer;
+	font-size: 1rem;
+	position: absolute;
+	bottom:15%;
+
+}
+
+.post_
+{
+	display: flex;
+	justify-content: space-between;
+}
+
+.delete_post
+{
+	cursor: pointer;
+	font-size: 1.2rem;
+	background-color: rgba(0,0,0,0.2);
+	border-radius: 100%;
+	height: max-content;
+	padding: 1.4vh;
+	padding-right: 13px;
+}
+
+.error
+{
+	color:red;
+	position: relative;
+	bottom:50px;
+}
+
+.read_post
+{
+	margin-left: 10px;
+	color:black;
+	font-weight: 600;
+}
+
+.postData
+{
+	height: 90vh;
+	padding: 2vh 8vh;
+
+}
+
+
+@media only screen and (max-width: 1000px)
+{
+	nav a
+	{
+		display: none;
+	}
+
+	header label
+	{
+		display: flex;
+	}
+
+	
+	
+	input#hammenu:checked ~ .menu-options
+	{
+		display: flex;
+		width: 60vw;
+		transform: translateX(0%);
+	}
+
+	input#hammenu:checked ~ .menu-options a
+	{
+		visibility: visible;
+	}
+
+
+	.about_section .post-options
+	{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+
+	}
+	.about_section .post-options .line
+	{
+		display: none;
+	}
+	.about_section .post-options a
+	{
+		padding: 10% 12%;
+	}
+
+	.about_section .post-options .read::after,.about_section .post-options .compose::after
+	{
+		display: none;
+	}
+
+}
+
+@media only screen and (max-height: 400px)
+{
+
+	.postCreation textarea
+	{
+		position: absolute;
+		top:72%;
+		height: 200px;
+		width: 280px;
+	}
+	
+	.postCreation button
+	{
+		bottom:-45%;
+	}
+
+	.about_section .post-options .read::after,.about_section .post-options .compose::after
+	{
+		display: none;
+	}
+
+	header label
+	{
+		position: relative;
+		bottom:5px;
+	}
+}
+

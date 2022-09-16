@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initital-scale=1.0">
+		<meta name="keywords" content="read and create posts,create posts,add posts,read posts">
+		<meta name="description" content="In this website you can read and create posts">
+		<title>Blog</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="referrer" content="origin">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+	</head>
+	<body>
+		<header>
+			<div class="brand">
+				<img src="/logo2.png" alt="BrandLogo">
+				<a href="/">Brand</a>
+			</div>
+			<nav>
+				<a href="/" class="<%=hactive%>">Home</a>
+				<a href="/post" class="<%=aactive%>">Post</a>
+				<a href="/compose" class="<%=cactive%>">Compose</a>
+				<div class="dropmenu">
+						<input type="checkbox" hidden id="hammenu" >
+						<label for="hammenu">
+							<div class="bar1"></div>
+							<div class="bar2"></div>
+							<div class="bar3"></div>
+						</label>
+						<div class="menu-options">
+								<a href="/" class="<%=hactive%>">Home</a>
+								<a href="/post" class="<%=aactive%>">Post</a>
+								<a href="/compose" class="<%=cactive%>">Compose</a>
+						</div>
+				</div>
+			</nav>
+		</header>
+		<main>
